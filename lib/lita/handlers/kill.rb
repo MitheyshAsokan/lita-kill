@@ -1,9 +1,14 @@
 module Lita
   module Handlers
     class Kill < Handler
-      # insert handler code here
+      route(/^kill\s+(.+)/, :echo, help: { "kill TEXT" => "Echoes back TEXT." })
 
-      Lita.register_handler(self)
+      def kill(response)
+        response.reply(response.matches)
+      end
+    end
+
+    Lita.register_handler(Kill)
     end
   end
 end
