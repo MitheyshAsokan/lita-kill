@@ -9,6 +9,5 @@ module Lita
     end
 
     Lita.register_handler(Kill)
-    end
   end
 end
